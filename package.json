@@ -4,7 +4,7 @@
   "description": "Repo con ejemplos de integración continua en Front-End",
   "main": "index.js",
   "scripts": {
-    "install": "install:angular",
+    "install": "npm run install:angular",
     "install:angular": "cd angular && npm install",
     "test": "npm run test:angular",
     "test:angular": "cd angular && npm run test"
