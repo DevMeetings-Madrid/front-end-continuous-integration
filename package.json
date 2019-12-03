@@ -7,7 +7,7 @@
     "install": "npm run install:angular",
     "install:angular": "cd angular && npm install",
     "test": "npm run test:angular",
-    "test:angular": "cd angular && npm run test-headless",
+    "test:angular": "cd angular && npm run test:headless",
     "build": "npm run build:angular",
     "build:angular": "cd angular && npm run build:prod"
   },
