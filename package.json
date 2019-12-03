@@ -7,7 +7,9 @@
     "install": "npm run install:angular",
     "install:angular": "cd angular && npm install",
     "test": "npm run test:angular",
-    "test:angular": "cd angular && npm run test"
+    "test:angular": "cd angular && npm run test",
+    "build": "npm run build:angular",
+    "build:angular": "cd angular && npm run build:prod"
   },
   "repository": {
     "type": "git",
