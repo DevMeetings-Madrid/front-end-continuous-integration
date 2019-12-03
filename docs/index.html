@@ -1,49 +1,162 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Integración continua en Front-End</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/custom.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- intro -->
+			<section>
+				<h2>Integración continua en Front-End</h2>
+				<p>
+					<br>
+					<small>By <a href="https://www.linkedin.com/in/fran-linde-blazquez/" target="_blank">Fran Linde Blázquez</a></small>
+				</p>
+			</section>
+			<!-- END intro -->
+
+			<!-- presentación -->
+			<section>
+				<h2>¿Quién soy?</h2>
+				<p class="fragment">Fran Linde Blázquez</p>
+				<p class="fragment">Ingeniero de Software</p>
+				<p class="fragment">Desarrollador Webs/Apps desde 2013</p>
+				<p class="fragment">Desarrollador Front-End en <a href="https://minsait.com">Minsait</a> desde 2016</p>
+				<p class="fragment"><a target="_blank" href="https://twitter.com/franlindebl">@franlindebl</a></p>
+			</section>
+			<!-- END presentación -->
+
+			<section>
+				<h3>¿Qué es la CI/CD?</h3>
+				<p class="fragment">CI: Continuous Integration</p>
+				<p class="fragment">CD: Continuous Delivery</p>
+				<p class="fragment">RedHat: <em>"La CI/CD (Integración Continua / Distribución Continua) es un método para distribuir aplicaciones a los clientes con frecuencia mediante el uso de la automatización en las etapas del desarrollo de aplicaciones."</em></p>
+			</section>
+
+			<section>
+				<h3>¿Qué es la CI/CD?</h3>
+				<p class="fragment">Mundo ideal: Incluye desarrollo continuo</p>
+				<img class="fragment" src="./assets/imgs/ejemplo-flujo-desarrollo-continuo.png" alt="">
+			</section>
+
+			<section>
+				<h3>CI/CD: Tecnologías</h3>
+				<img src="./assets/imgs/esquema-ci-cd.svg" alt="">
+			</section>
+
+			<section>
+				<h3>CI/CD: Tecnologías</h3>
+				<div class="row">
+					<div class="col-1">
+						<p class="">
+							<strong>Control de versiones:</strong>
+							<ul>
+								<li>Gitlab</li>
+								<li>Github</li>
+								<li>Bitbucket</li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-1">
+						<p class="">
+							<strong>CI / CD:</strong>
+							<ul>
+								<li>Jenkins</li>
+								<li>Bamboo</li>
+								<li>Travis</li>
+								<li>TeamCity</li>
+								<li>Gitlab Runners</li>
+								<li>Github Actions</li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-1">
+						<p class="">
+							<strong>Deployment:</strong>
+							<ul>
+								<li>AWS</li>
+								<li>Azure</li>
+								<li>Google Cloud</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3>CI/CD ¿en local?</h3>
+				<p class="fragment">Git Hooks</p>
+				<img class="fragment width-70" src="./assets/imgs/git-hooks-scheme.png" alt="">
+			</section>
+
+			<section>
+				<h3>CI/CD en local: Husky</h3>
+				<p class="fragment">Permite configurar Hooks de Git rápidamente:</p>
+				<p class="fragment">Instalación:</p>
+				<pre class="fragment"><code data-trim class="javascript">
+npm install husky --save-dev
+				</code></pre>
+				<p class="fragment">Configuración:</p>
+				<pre class="fragment"><code data-trim class="javascript">
+// package.json
+{
+   "husky": {
+      "hooks": {
+         "pre-commit": "npm test",
+         "pre-push": "npm test",
+         "...": "..."
+      }
+   }
+}
+				</code></pre>
+			</section>
+
+			<section>
+				<h2>DEMO</h2>
+			</section>
 		</div>
+	</div>
 
-		<script src="js/reveal.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			],
+			hash: true,
+		});
+	</script>
+</body>
+
 </html>
