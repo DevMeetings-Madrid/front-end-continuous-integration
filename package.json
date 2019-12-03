@@ -1,0 +1,29 @@
+{
+  "name": "front-end-continuous-integration",
+  "version": "1.0.0",
+  "description": "Repo con ejemplos de integración continua en Front-End",
+  "main": "index.js",
+  "scripts": {
+    "install": "install:angular",
+    "install:angular": "cd angular && npm install",
+    "test": "npm run test:angular",
+    "test:angular": "cd angular && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevMeetings-Madrid/front-end-continuous-integration.git"
+  },
+  "keywords": [
+    "front",
+    "ci",
+    "cd",
+    "integracion",
+    "continua"
+  ],
+  "author": "Fran Linde Blázquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevMeetings-Madrid/front-end-continuous-integration/issues"
+  },
+  "homepage": "https://github.com/DevMeetings-Madrid/front-end-continuous-integration#readme"
+}
