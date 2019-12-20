@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  constructor() {
+    const myVariable = 10;
+    myVariable = 'Soy un string muy endiablado';
+  }
 }
